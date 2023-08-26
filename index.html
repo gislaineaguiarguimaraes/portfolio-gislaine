@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Link para o google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap"
+      rel="stylesheet"
+    />
+    <!--Link para os arquivos de estilos-->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/composants/themeSwitcher.css" />
+    <link rel="stylesheet" href="./css/composants/navbar.css" />
+    <!--Link para o FontAwesome-->
+    <script
+      src="https://kit.fontawesome.com/ab1c9d4ba2.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Portfolio Gislaine de Aguiar</title>
+  </head>
+  <body class="body_home">
+    <div class="containerHome">
+      <div class="container_icons">
+        <div class="themeSwitcher"></div>
+      </div>
+      <div class="navbar_container" id="navbar_container"></div>
+      <main>
+        <section class="section_container">
+          <div class="section_img">
+            <div class="img"></div>
+          </div>
+          <div class="section_text">
+            <div class="section_title">
+              <h1>
+                Olá! <br />
+                Meu nome é
+                <span> Gislaine </span>
+              </h1>
+              <h2>Frontend developer</h2>
+            </div>
+            <div class="section_description">
+              <p>
+                Bem-vindo ao meu mundo de pixels e códigos! Sou uma
+                desenvolvedora front-end apaixonada por criar experiências
+                digitais incríveis. Minha jornada é pavimentada com linhas de
+                código que se transformam em designs intuitivos e funcionais.
+                Explore meu portfólio para descobrir como dou vida às ideias,
+                mergulhando no universo da web e construindo pontes entre design
+                e desenvolvimento. Minha missão é superar desafios e entregar
+                soluções.
+              </p>
+              <div class="container_btn">
+                <button class="btn">
+                  <a href="./pages/about.html">Mais sobre mim</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="banner"></div>
+    <script src="./components/themeSwitcher.js" defer></script>
+    <script src="./components/navbar.js" defer></script>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        const containerId = 'navbar_container'
+        Navbar({ containerId })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Link para o google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Link para o FontAwesome-->
+    <script
+      src="https://kit.fontawesome.com/ab1c9d4ba2.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Link para os arquivos de estilo-->
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/pages/about.css" />
+    <link rel="stylesheet" href="../css/composants/themeSwitcher.css" />
+    <link rel="stylesheet" href="../css/composants/navbar.css" />
+    <title>Sobre Mim</title>
+  </head>
+  <body class="body_about">
+    <div class="themeSwitcher_container"></div>
+    <div class="containerAbout">
+      <main>
+        <aside class="asideAbout">
+          <div class="asideAbout_img">
+            <img src="../images/profile2.png" alt="profile" />
+          </div>
+          <div class="asideAbout_navbar">
+            <nav class="asideNavbar_about" id="navbar_container"></nav>
+          </div>
+        </aside>
+        <section class="sectionAbout">
+          <div class="sectionAbout_container">
+            <h1>Sobre mim</h1>
+            <h2>
+              Oi, meu nome é <span>Gislaine de Aguiar,</span> <br />e eu sou
+              <span class="typing"></span>
+            </h2>
+            <p>
+              Com proficiência em HTML, CSS e JavaScript, minha expertise está
+              em traduzir designs criativos em interfaces responsivas e
+              funcionais. Meu enfoque é em código limpo e eficiente, garantindo
+              projetos de alta qualidade. Trabalho com frameworks modernos, como
+              React e Vue, para criar aplicações web interativas e dinâmicas,
+              oferecendo uma excelente experiência ao usuário. Mantenho-me
+              atualizada com as tendências e tecnologias emergentes, e minha
+              paixão por otimização e resolução de problemas me impulsiona a
+              fornecer soluções inovadoras e eficazes."
+            </p>
+            <div class="containerSkillsIcons">
+              <div></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="banner"></div>
+
+    <!--Javascript do themeSwither-->
+    <script src="../components/themeSwitcher.js" defer></script>
+
+    <!--Javascript da Navbar-->
+    <script src="../components/navbar.js" defer></script>
+
+    <!--Javascript que passa dinamicamente as propriedades da navbar -->
+    <script defer>
+      //add evento de escuta do carregamento da pagina para construçao do elemento qnd ele estiver pronto para manipulação
+      document.addEventListener('DOMContentLoaded', () => {
+        const containerId = 'navbar_container'
+        const icons = [
+          { name: 'index', icon: ' fa-house', route: '/index.html' },
+          { name: 'about', icon: 'fa-user', route: '../pages/about.html' },
+          {
+            name: 'experience',
+            icon: 'fa-suitcase',
+            route: '../pages/experience.html',
+          },
+          {
+            name: 'portfolio',
+            icon: 'fa-desktop',
+            route: '../pages/portfolio.html',
+          },
+          {
+            name: 'contact',
+            icon: 'fa-paper-plane',
+            route: '../pages/contact.html',
+          },
+        ]
+        const texts = {
+          index: 'Home',
+          about: 'About',
+          experience: 'Experience',
+          portfolio: 'Portfolio',
+          contact: 'Contact',
+        }
+
+        Navbar({ containerId, icons, texts })
+
+        //funçao para o texto simulando digitaçao
+        function typeText(element, texts, typeSpeed, backSpeed) {
+          let currentTextIndex = 0
+          let isDeleting = false
+          let text = ''
+
+          function type() {
+            const currentText = texts[currentTextIndex]
+            if (isDeleting) {
+              text = currentText.substring(0, text.length - 1)
+            } else {
+              text = currentText.substring(0, text.length + 1)
+            }
+
+            element.innerHTML = text
+
+            if (!isDeleting && text === currentText) {
+              isDeleting = true
+              setTimeout(type, backSpeed)
+            } else if (isDeleting && text === '') {
+              isDeleting = false
+              currentTextIndex = (currentTextIndex + 1) % texts.length
+              setTimeout(type, typeSpeed)
+            } else {
+              setTimeout(type, isDeleting ? backSpeed : typeSpeed)
+            }
+          }
+
+          type()
+        }
+
+        // Chamar a função para iniciar a animação
+        const typingElement = document.querySelector('.typing')
+        const options = [
+          'Desenvolvedora Front-end',
+          'Freelancer',
+          'Curiosa',
+          'Apaixonada',
+          'Dedicada',
+          'Eu...',
+        ]
+        typeText(typingElement, options, 100, 60)
+      })
+    </script>
+  </body>
+</html>

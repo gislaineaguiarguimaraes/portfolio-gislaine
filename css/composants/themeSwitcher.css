@@ -1,0 +1,65 @@
+.theme-switcher {
+  padding-left: 0.5rem;
+  padding-bottom: 1.1rem;
+  z-index: 1;
+}
+
+.colorIcon {
+  background-color: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  animation: rotateIcon 1.5s linear infinite;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.containerButtons {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 5.5rem;
+  left: 0.5rem;
+  width: 2rem;
+  transition: height 0.3s;
+  z-index: 2;
+}
+
+.containerButtons.active {
+  display: block;
+}
+
+.containerButtons button {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes rotateIcon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.theme-switcher.active .containerButtons {
+  display: flex;
+  height: auto;
+}
+@media screen and (min-width: 992px) {
+  .theme-switcher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0.5rem 0.3rem;
+  }
+  .containerButtons {
+    top: 3rem;
+    left: 0.5rem;
+  }
+}
