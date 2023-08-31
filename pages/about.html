@@ -38,11 +38,9 @@
               </h2>
             </div>
             <div class="section_img">
-              <div class="dotted-square"></div>
               <div class="img">
                 <img src="../images/profile2.png" alt="profile" />
               </div>
-              <div class="dotted-square"></div>
             </div>
 
             <div class="section_text">
@@ -99,8 +97,39 @@
       //add evento de escuta do carregamento da pagina para construçao do elemento qnd ele estiver pronto para manipulação
       document.addEventListener('DOMContentLoaded', () => {
         const containerId = 'navbar_container'
-
-        Navbar({ containerId })
+        const icons = [
+          {
+            name: 'index',
+            icon: ' fa-house',
+            text: 'Home',
+            route: '../index.html',
+          },
+          {
+            name: 'about',
+            icon: 'fa-user',
+            text: 'About',
+            route: './about.html',
+          },
+          {
+            name: 'experience',
+            icon: 'fa-suitcase',
+            text: 'Experience',
+            route: './experience.html',
+          },
+          {
+            name: 'portfolio',
+            icon: 'fa-desktop',
+            text: 'Portfolio',
+            route: './portfolio.html',
+          },
+          {
+            name: 'contact',
+            icon: 'fa-paper-plane',
+            text: 'Contact',
+            route: './pages/contact.html',
+          },
+        ]
+        Navbar({ containerId, icons })
 
         //funçao para o texto simulando digitaçao
         function typeText(element, texts, typeSpeed, backSpeed, delay) {

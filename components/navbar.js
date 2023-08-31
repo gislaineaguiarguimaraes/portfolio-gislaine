@@ -1,38 +1,12 @@
 // Função para criar a Navbar
-function Navbar({ containerId }) {
+function Navbar({ containerId, icons }) {
   const container = document.getElementById(containerId)
 
   if (!container) {
     console.error(`Container element with id '${containerId}' not found.`)
     return
   }
-  const icons = [
-    { name: 'index', icon: ' fa-house', text: 'Home', route: '/index.html' },
-    {
-      name: 'about',
-      icon: 'fa-user',
-      text: 'About',
-      route: '../pages/about.html',
-    },
-    {
-      name: 'experience',
-      icon: 'fa-suitcase',
-      text: 'Experience',
-      route: '../pages/experience.html',
-    },
-    {
-      name: 'portfolio',
-      icon: 'fa-desktop',
-      text: 'Portfolio',
-      route: '../pages/portfolio.html',
-    },
-    {
-      name: 'contact',
-      icon: 'fa-paper-plane',
-      text: 'Contact',
-      route: '../pages/contact.html',
-    },
-  ]
+
   const navbar = document.createElement('nav')
   navbar.className = 'navbar'
 

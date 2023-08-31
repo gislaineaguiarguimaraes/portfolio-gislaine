@@ -85,9 +85,9 @@
 @media screen and (min-width: 992px) {
   .navbar {
     position: absolute;
-    top: 50%;
+    top: 30%;
     right: 1%;
-    transform: translateY(50%);
+    transform: translateY(30%);
     width: auto;
     z-index: 2;
   }
