@@ -61,10 +61,6 @@
   margin: auto;
 }
 
-.nav-list li {
-  margin-bottom: 1rem;
-}
-
 .nav-list a {
   font-size: 1.4rem;
   font-weight: bolder;
@@ -72,6 +68,9 @@
   color: black;
 }
 
+.nav-list li .link.active {
+  color: white;
+}
 .vertical-dots {
   font-size: 1.3rem;
   display: block;
@@ -87,10 +86,10 @@
   .navbar {
     position: absolute;
     top: 50%;
-    bottom: -50%;
-    right: -41%;
-    transform: translateY(-50%);
-    z-index: 1000;
+    right: 1%;
+    transform: translateY(50%);
+    width: auto;
+    z-index: 2;
   }
   .hamburgerContainer {
     display: none;
@@ -104,16 +103,17 @@
     z-index: 1;
     padding: 1rem 0.2rem;
   }
-  .nav-list a {
+  .nav-list li {
+    margin-bottom: 1rem;
+  }
+  .nav-list .link {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
-    font-weight: bolder;
-    text-decoration: none;
-    color: black;
   }
+
   .icon-text {
     display: none;
   }
@@ -121,15 +121,56 @@
     margin-left: -0.5rem;
     font-size: 1.2rem;
   }
+  .body_about .navbar {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    z-index: 2;
+  }
+  .body_about .nav-list {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    z-index: 1;
+    padding: 0.5rem;
+  }
+  .body_about .icon-text {
+    display: block;
+  }
+  .body_about .vertical-dots {
+    display: none;
+  }
+  .body_about .nav-list li {
+    margin-bottom: 0;
+    padding: 0.4rem;
+  }
+  .body_about .nav-list li:not(:last-child)::after {
+    display: block;
+    margin: auto;
+    content: ' ';
+    width: 80%;
+    height: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.404);
+  }
+  .body_about .nav-list a {
+    flex-direction: row;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+  }
 }
 
 @media screen and (min-width: 1500px) {
   .navbar {
-    position: absolute;
-    top: 50%;
-    bottom: -50%;
-    right: -31%;
-    transform: translateY(-50%);
-    z-index: 1000;
+    transform: translateY(50%);
+  }
+  .body_about .nav-list {
+    padding: 0.5rem 0.2rem;
+  }
+  .body_about .nav-list li {
+    padding: 0.6rem;
   }
 }

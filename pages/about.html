@@ -22,37 +22,65 @@
     <title>Sobre Mim</title>
   </head>
   <body class="body_about">
-    <div class="themeSwitcher_container"></div>
     <div class="containerAbout">
+      <div class="container_icons">
+        <div class="themeSwitcher"></div>
+      </div>
+      <div class="navbar_container" id="navbar_container"></div>
       <main>
-        <aside class="asideAbout">
-          <div class="asideAbout_img">
-            <img src="../images/profile2.png" alt="profile" />
-          </div>
-          <div class="asideAbout_navbar">
-            <nav class="asideNavbar_about" id="navbar_container"></nav>
-          </div>
-        </aside>
-        <section class="sectionAbout">
-          <div class="sectionAbout_container">
-            <h1>Sobre mim</h1>
-            <h2>
-              Oi, meu nome é <span>Gislaine de Aguiar,</span> <br />e eu sou
-              <span class="typing"></span>
-            </h2>
-            <p>
-              Com proficiência em HTML, CSS e JavaScript, minha expertise está
-              em traduzir designs criativos em interfaces responsivas e
-              funcionais. Meu enfoque é em código limpo e eficiente, garantindo
-              projetos de alta qualidade. Trabalho com frameworks modernos, como
-              React e Vue, para criar aplicações web interativas e dinâmicas,
-              oferecendo uma excelente experiência ao usuário. Mantenho-me
-              atualizada com as tendências e tecnologias emergentes, e minha
-              paixão por otimização e resolução de problemas me impulsiona a
-              fornecer soluções inovadoras e eficazes."
-            </p>
-            <div class="containerSkillsIcons">
-              <div></div>
+        <section class="section_container">
+          <div class="section_description">
+            <div class="section_title">
+              <h1>Sobre mim</h1>
+              <h2>
+                Meu nome é <span>Gislaine de Aguiar.</span> E eu sou...<br />
+                <span class="typing"></span>
+              </h2>
+            </div>
+            <div class="section_img">
+              <div class="dotted-square"></div>
+              <div class="img">
+                <img src="../images/profile2.png" alt="profile" />
+              </div>
+              <div class="dotted-square"></div>
+            </div>
+
+            <div class="section_text">
+              <p>
+                Com proficiência em HTML, CSS e JavaScript, minha expertise está
+                em traduzir designs criativos em interfaces responsivas e
+                funcionais. Meu enfoque é em código limpo e eficiente,
+                garantindo projetos de alta qualidade. Trabalho com frameworks
+                modernos, como React e Vue, para criar aplicações web
+                interativas e dinâmicas, oferecendo uma excelente experiência ao
+                usuário. Mantenho-me atualizada com as tendências e tecnologias
+                emergentes, e minha paixão por otimização e resolução de
+                problemas me impulsiona a fornecer soluções inovadoras e
+                eficazes."
+              </p>
+              <div class="containerIcons">
+                <div class="icon">
+                  <i class="fa-brands fa-html5"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-css3-alt"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-sass"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-square-js"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-node"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-react"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-python"></i>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -71,37 +99,11 @@
       //add evento de escuta do carregamento da pagina para construçao do elemento qnd ele estiver pronto para manipulação
       document.addEventListener('DOMContentLoaded', () => {
         const containerId = 'navbar_container'
-        const icons = [
-          { name: 'index', icon: ' fa-house', route: '/index.html' },
-          { name: 'about', icon: 'fa-user', route: '../pages/about.html' },
-          {
-            name: 'experience',
-            icon: 'fa-suitcase',
-            route: '../pages/experience.html',
-          },
-          {
-            name: 'portfolio',
-            icon: 'fa-desktop',
-            route: '../pages/portfolio.html',
-          },
-          {
-            name: 'contact',
-            icon: 'fa-paper-plane',
-            route: '../pages/contact.html',
-          },
-        ]
-        const texts = {
-          index: 'Home',
-          about: 'About',
-          experience: 'Experience',
-          portfolio: 'Portfolio',
-          contact: 'Contact',
-        }
 
-        Navbar({ containerId, icons, texts })
+        Navbar({ containerId })
 
         //funçao para o texto simulando digitaçao
-        function typeText(element, texts, typeSpeed, backSpeed) {
+        function typeText(element, texts, typeSpeed, backSpeed, delay) {
           let currentTextIndex = 0
           let isDeleting = false
           let text = ''
@@ -118,7 +120,9 @@
 
             if (!isDeleting && text === currentText) {
               isDeleting = true
-              setTimeout(type, backSpeed)
+              setTimeout(() => {
+                type()
+              }, delay) // Adicione um atraso antes de começar a apagar
             } else if (isDeleting && text === '') {
               isDeleting = false
               currentTextIndex = (currentTextIndex + 1) % texts.length
@@ -131,9 +135,8 @@
           type()
         }
 
-        // Chamar a função para iniciar a animação
-        const typingElement = document.querySelector('.typing')
-        const options = [
+        const element = document.querySelector('.typing')
+        const texts = [
           'Desenvolvedora Front-end',
           'Freelancer',
           'Curiosa',
@@ -141,7 +144,14 @@
           'Dedicada',
           'Eu...',
         ]
-        typeText(typingElement, options, 100, 60)
+        const typeSpeed = 100 // velocidade de digitação
+        const backSpeed = 50 // velocidade de apagar
+        const delay = 1000 // atraso antes de começar a apagar
+
+        typeText(element, texts, typeSpeed, backSpeed, delay)
+
+        const options = []
+        typeText(typingElement, options, 150, 150)
       })
     </script>
   </body>

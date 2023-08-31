@@ -49,7 +49,9 @@ function Navbar({ containerId }) {
 
   icons.forEach(({ name, icon, text, route }, index) => {
     const listItem = document.createElement('li')
+
     const link = document.createElement('a')
+    link.className = 'link'
     link.href = route
     link.innerHTML = `<i class="fa-solid ${icon}"></i>`
 
@@ -70,6 +72,29 @@ function Navbar({ containerId }) {
   navbar.appendChild(navList)
   container.appendChild(navbar)
   container.appendChild(hamburgerContainer)
+
+  const navLinks = document.querySelectorAll('.link')
+  const currentPath = window.location.pathname
+
+  navLinks.forEach((link) => {
+    const linkPath = link.getAttribute('href')
+
+    if (currentPath === linkPath) {
+      link.classList.add('active') // Aplica a classe 'active' ao link atual
+    }
+    link.addEventListener('click', (event) => {
+      event.preventDefault()
+
+      navLinks.forEach((link) => link.classList.remove('active'))
+      link.classList.add('active')
+
+      const targetPage = link.getAttribute('href')
+
+      setTimeout(() => {
+        window.location.href = targetPage
+      }, 300)
+    })
+  })
 
   hamburgerButton.addEventListener('click', () => {
     const navbar = document.querySelector('.navbar')

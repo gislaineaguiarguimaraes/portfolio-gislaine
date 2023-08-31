@@ -62,4 +62,11 @@
     top: 3rem;
     left: 0.5rem;
   }
+  .body_about .theme-switcher {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    margin: 0.5rem 0.5rem;
+  }
 }

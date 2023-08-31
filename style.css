@@ -164,21 +164,17 @@ body {
     z-index: -1;
   }
   .containerHome {
+    position: relative;
     margin: auto;
     width: 85%;
     height: 85%;
+    min-height: 30rem;
     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.82);
   }
   .containerHome main {
     height: 100%;
   }
-  .navbar_container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-  }
+
   .containerHome .container_icons {
     background-color: transparent;
   }
@@ -244,16 +240,14 @@ body {
     padding: 0;
   }
   .container_btn .btn {
-    margin: 1.5rem;
+    margin: 3rem auto;
     padding: 1rem 1.5rem;
   }
 }
 
 @media screen and (min-width: 1500px) {
   .containerHome {
-    margin: auto;
     width: 65%;
     height: 65%;
-    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.82);
   }
 }
