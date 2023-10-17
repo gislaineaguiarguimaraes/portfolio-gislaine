@@ -43,6 +43,6 @@ class ThemeSwitcher {
 
 // Usage
 document.addEventListener('DOMContentLoaded', () => {
-  const themeSwitcherContainer = document.querySelector('.themeSwitcher')
-  const themeSwitcher = new ThemeSwitcher(themeSwitcherContainer)
+  const themeSwitcherContainer = document.querySelector('.theme_switcher')
+  const theme_switcher = new ThemeSwitcher(themeSwitcherContainer)
 })

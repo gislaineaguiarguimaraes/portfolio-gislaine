@@ -10,7 +10,7 @@ function Navbar({ containerId, icons }) {
   const navbar = document.createElement('nav')
   navbar.className = 'navbar'
 
-  const hamburgerContainer = document.createElement('div') //mexi aqui
+  const hamburgerContainer = document.createElement('div')
   hamburgerContainer.className = 'hamburgerContainer'
   const hamburgerButton = document.createElement('button')
   hamburgerButton.className = 'hamburger-icon'
@@ -21,7 +21,7 @@ function Navbar({ containerId, icons }) {
   const navList = document.createElement('ul')
   navList.className = 'nav-list'
 
-  icons.forEach(({ name, icon, text, route }, index) => {
+  icons.forEach(({ name, icon, text, route, id }, index) => {
     const listItem = document.createElement('li')
 
     const link = document.createElement('a')
@@ -32,7 +32,6 @@ function Navbar({ containerId, icons }) {
     link.innerHTML += `<span class="icon-text">${text}</span>`
 
     if (index !== icons.length - 1) {
-      console.log(icons.length)
       const points = document.createElement('span')
       points.className = 'vertical-dots'
       points.innerHTML = '...'
@@ -51,10 +50,10 @@ function Navbar({ containerId, icons }) {
   const currentPath = window.location.pathname
 
   navLinks.forEach((link) => {
-    const linkPath = link.getAttribute('href')
+    const linkPath = link.getAttribute('href').replace('./', '')
 
-    if (currentPath === linkPath) {
-      link.classList.add('active') // Aplica a classe 'active' ao link atual
+    if (currentPath.endsWith(linkPath) || currentPath.includes(linkPath)) {
+      link.classList.add('active')
     }
     link.addEventListener('click', (event) => {
       event.preventDefault()

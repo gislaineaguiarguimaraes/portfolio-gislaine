@@ -46,7 +46,7 @@
   <body class="body_about">
     <div class="containerAbout">
       <div class="container_icons">
-        <div class="themeSwitcher"></div>
+        <div class="theme_switcher"></div>
       </div>
       <div class="navbar_container" id="navbar_container"></div>
       <main>
@@ -129,7 +129,7 @@
     <script src="../components/navbar.js" defer></script>
 
     <!--Javascript do Carrossel-->
-    <script src="../components/carousel.js" defer></script>
+    <script src="../components/carouselIcons.js" defer></script>
 
     <!--Javascript do typing-->
     <script src="../components/typing.js" defer></script>
@@ -145,30 +145,35 @@
             icon: ' fa-house',
             text: 'Home',
             route: '../index.html',
+            id: 'home_link',
           },
           {
             name: 'about',
             icon: 'fa-user',
             text: 'About',
             route: './about.html',
+            id: 'about_link',
           },
           {
             name: 'experience',
             icon: 'fa-suitcase',
             text: 'Experience',
             route: './experience.html',
+            id: 'experience_link',
           },
           {
             name: 'portfolio',
             icon: 'fa-desktop',
             text: 'Portfolio',
             route: './portfolio.html',
+            id: 'portfolio_link',
           },
           {
             name: 'contact',
             icon: 'fa-paper-plane',
             text: 'Contact',
-            route: './pages/contact.html',
+            route: './contact.html',
+            id: 'contact_link',
           },
         ]
         Navbar({ containerId, icons })
