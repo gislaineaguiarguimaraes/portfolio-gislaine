@@ -3,9 +3,134 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
+    <!--Link para o google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Link para os arquivos de estilos-->
+    <link rel="stylesheet" href="../css/pages/contact.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/composants/themeSwitcher.css" />
+    <link rel="stylesheet" href="../css/composants/navbar.css" />
+    <!--Link para o FontAwesome-->
+    <script
+      src="https://kit.fontawesome.com/ab1c9d4ba2.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Portfolio Gislaine de Aguiar</title>
   </head>
-  <body>
-    Pagina contato
+  <body class="body_contact">
+    <div class="container_contact">
+      <div class="container_icons">
+        <div class="theme_switcher"></div>
+      </div>
+      <div class="navbar_container" id="navbar_container"></div>
+      <section class="section_container">
+        <div class="section_description">
+          <div class="section_title">
+            <h1>Contactez-Moi</h1>
+          </div>
+          <div class="section_text">
+            <h2>Avez-vous des questions?</h2>
+            <h3>N'hésitez pas à me contacter</h3>
+          </div>
+        </div>
+
+        <div class="contact_info">
+          <!--===== Contact info item start =====-->
+          <div class="contact_info_item">
+            <div class="icon"><i class="fa fa-phone"></i></div>
+            <h4>Téléphone</h4>
+            <p>+33 07 53 21 23 83</p>
+          </div>
+          <!--===== Contact info item end =====-->
+          <!--===== Contact info item start =====-->
+          <div class="contact_info_item">
+            <div class="icon"><i class="fa fa-linkedin"></i></div>
+            <h4>Linkedin</h4>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/gislaine-de-aguiar-guimaraes/"
+                target="_blank"
+                >GislaineGuimaraes</a
+              >
+            </p>
+          </div>
+          <!--===== Contact info item end =====-->
+          <!--===== Contact info item start =====-->
+          <div class="contact_info_item">
+            <div class="icon"><i class="fa fa-github"></i></div>
+            <h4>GitHub</h4>
+            <p>
+              <a
+                href="https://github.com/gislaineaguiarguimaraes"
+                target="_blank"
+                >GislaineGuimaraes</a
+              >
+            </p>
+          </div>
+          <!--===== Contact info item end =====-->
+          <!--===== Contact info item start =====-->
+          <div class="contact_info_item">
+            <div class="icon"><i class="fa fa-envelope"></i></div>
+            <h4>Email</h4>
+            <p class="mail">
+              <a href="malito:gis_guimaraes@hotmail.com"
+                >gis_guimaraes@hotmail.com</a
+              >
+            </p>
+          </div>
+          <!--===== Contact info item end =====-->
+        </div>
+        <h3 class="section_text">À bientôt !</h3>
+      </section>
+      <!--==== Contact Section End ====-->
+    </div>
+    <div class="banner"></div>
+    <script src="../components/themeSwitcher.js" defer></script>
+    <script src="../components/navbar.js" defer></script>
+    <script src="../components/carouselPortfolio.js" defer></script>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', () => {
+        const containerId = 'navbar_container'
+        const icons = [
+          {
+            name: 'index',
+            icon: ' fa-house',
+            text: 'Home',
+            route: '../index.html',
+          },
+          {
+            name: 'about',
+            icon: 'fa-user',
+            text: 'About',
+            route: './about.html',
+          },
+          {
+            name: 'experience',
+            icon: 'fa-suitcase',
+            text: 'Experience',
+            route: './experience.html',
+          },
+          {
+            name: 'portfolio',
+            icon: 'fa-desktop',
+            text: 'Portfolio',
+            route: './portfolio.html',
+          },
+          {
+            name: 'contact',
+            icon: 'fa-paper-plane',
+            text: 'Contact',
+            route: './contact.html',
+          },
+        ]
+        Navbar({ containerId, icons })
+      })
+    </script>
   </body>
 </html>

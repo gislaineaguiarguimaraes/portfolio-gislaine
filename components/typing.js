@@ -33,12 +33,11 @@ function typeText(element, texts, typeSpeed, backSpeed, delay) {
 
 const element = document.querySelector('.typing')
 const texts = [
-  'Desenvolvedora Front-end',
-  'Freelancer',
-  'Curiosa',
-  'Apaixonada',
-  'Dedicada',
-  'Eu...',
+  'Développeuse Front-end',
+  'Disponible',
+  'Curieuse',
+  'Passionnée',
+  'Moi...',
 ]
 const typeSpeed = 100 // velocidade de digitação
 const backSpeed = 50 // velocidade de apagar

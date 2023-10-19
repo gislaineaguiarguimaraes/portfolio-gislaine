@@ -10,7 +10,7 @@
   z-index: 2;
 }
 .hamburgerContainer {
-  margin: 1.7rem 1rem;
+  margin: 1.5rem 1rem;
   z-index: 3;
 }
 .hamburger-icon {
@@ -62,8 +62,8 @@
 }
 
 .nav-list a {
-  font-size: 1.4rem;
-  font-weight: bolder;
+  font-size: 1.15rem;
+  font-weight: 600;
   text-decoration: none;
   color: black;
 }
@@ -72,11 +72,10 @@
   color: white;
 }
 .vertical-dots {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   display: block;
   transform: rotate(-90deg);
   color: black;
-  margin-top: 0.3rem;
 }
 .icon-text {
   margin-left: 1rem;
@@ -85,9 +84,9 @@
 @media screen and (min-width: 992px) {
   .navbar {
     position: absolute;
-    top: 30%;
+    top: 50%;
     right: 1%;
-    transform: translateY(30%);
+    transform: translateY(50%);
     width: auto;
     z-index: 2;
   }
@@ -103,9 +102,7 @@
     z-index: 1;
     padding: 1rem 0.2rem;
   }
-  .nav-list li {
-    margin-bottom: 1rem;
-  }
+
   .nav-list .link {
     display: flex;
     flex-direction: column;
@@ -143,23 +140,26 @@
     display: none;
   }
   .body_about .nav-list li {
-    margin-bottom: 0;
-    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .body_about .nav-list li:not(:last-child)::after {
     display: block;
     margin: auto;
     content: ' ';
     width: 80%;
-    height: 1rem;
+
     border-bottom: 1px solid rgba(0, 0, 0, 0.404);
   }
   .body_about .nav-list a {
     flex-direction: row;
     font-size: 1.1rem;
-    font-weight: bolder;
+    font-weight: 600;
     text-decoration: none;
     color: black;
+    padding: 0.6rem;
   }
 }
 

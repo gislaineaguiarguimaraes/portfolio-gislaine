@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+.body_experience {
+  position: relative;
+}
+
+.container_experience {
+  background-color: whitesmoke;
+  z-index: 0;
+}
+
+.container_experience .container_icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  background-color: var(--currentColor);
+}
+
+.container_experience .navbar_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.section_container {
+  flex: 1;
+  width: 100%;
+}
+
+.section_container,
+.section_title {
+  width: 96%;
+  margin: auto;
+}
+.section_container .section_title h1 {
+  font-size: 1.8rem;
+  margin: 1rem auto;
+}
+.section_container .section_title h1::after {
+  display: block;
+  content: ' ';
+  width: 5rem;
+  height: 0.5rem;
+  border-top: 2px solid var(--currentColor);
+}
+
+.section_container .section_timeline h2 {
+  position: relative;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  z-index: 1;
+}
+
+.section_container .section_timeline h2::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  display: block;
+  content: '';
+  width: 15rem;
+  height: 2.5rem;
+  background-image: radial-gradient(
+      var(--currentColor) 0.05rem,
+      transparent 0.05rem
+    ),
+    radial-gradient(var(--currentColor) 0.05rem, transparent 0.05rem);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.timeline_item {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline_item::before {
+  content: '';
+  width: 1px;
+  position: absolute;
+  height: 100%;
+  left: 7px;
+  top: 1rem;
+  background-color: var(--currentColor);
+}
+
+.timeline_date {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.timeline_item h4 {
+  width: 90%;
+  font-size: 1rem;
+  margin: 1rem auto;
+  text-align: justify;
+}
+
+.timeline_item p {
+  width: 90%;
+  font-size: 0.9rem;
+  margin: 1rem auto;
+  text-align: justify;
+}
+
+.circle_dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: var(--currentColor);
+}
+
+.timeline_date i {
+  margin-right: 0.5rem;
+}
+@media screen and (min-width: 992px) {
+  .body_experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../images/background.jpg');
+    background-attachment: fixed;
+  }
+
+  .banner {
+    background-color: var(--currentColor);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  .container_experience {
+    position: relative;
+    margin: auto;
+    width: 85%;
+    height: 85%;
+    min-height: 30rem;
+    background-color: transparent;
+  }
+
+  .container_experience .container_icons {
+    background-color: transparent;
+    position: fixed;
+  }
+  .container_experience .navbar_container {
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    transform: translateY(-50%);
+  }
+  .section_container .section_title {
+    width: 85%;
+  }
+  .section_container .section_title h1 {
+    margin: auto;
+
+    text-align: start;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .section_container .section_timeline {
+    margin: auto;
+    width: 85%;
+    display: flex;
+    gap: 2rem;
+  }
+  .section_container .section_timeline .timeline_education,
+  .section_container .section_timeline .timeline_work {
+    flex: 1;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.82);
+    margin-bottom: 2rem;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .container_experience {
+    width: 65%;
+    height: 65%;
+  }
+  .section_container {
+    margin-top: -5rem;
+  }
+  .container_experience .container_icons {
+    margin-top: -5rem;
+  }
+  .container_experience .navbar_container {
+    position: fixed;
+    top: 25%;
+    right: 15%;
+  }
+}

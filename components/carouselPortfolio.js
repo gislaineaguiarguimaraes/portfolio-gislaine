@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const translateX = -currentIndex * itemWidth + offset
 
     // Aplique o transform
-    carousel.style.transform = `translateX(${translateX}px)`
+    if (window.innerWidth > 992) {
+      carousel.style.transform = `translateX(${translateX}px)`
+    }
 
     // Atualize a classe ativa
     items.forEach((item, index) => {

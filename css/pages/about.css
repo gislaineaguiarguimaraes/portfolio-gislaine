@@ -7,6 +7,7 @@ html,
 body {
   width: 100%;
   height: 100vh !important;
+  font-family: 'Poppins', sans-serif;
 }
 .body_about {
   position: relative;
@@ -44,20 +45,20 @@ body {
 }
 .containerAbout .section_container .section_description .section_title h1 {
   text-align: center;
-  border: 0.2rem dashed rgba(0, 0, 0, 0.459);
+  border: 0.15rem dashed rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1.5rem;
   margin: 1rem auto;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 .containerAbout .section_container .section_description .section_title h2 {
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 300;
   margin-bottom: 2rem;
 }
 
 .containerAbout .section_container .section_description .section_title h2 span {
-  font-weight: 800;
+  font-weight: 600;
 }
 .containerAbout
   .section_container
@@ -76,9 +77,8 @@ body {
 .containerAbout .section_container .section_description .section_text p {
   margin: 4rem auto;
   text-align: justify;
-
-  font-size: 1.1rem;
-  line-height: 1.4rem;
+  font-size: 1rem;
+  line-height: 1.6rem;
 }
 
 .section_container .section_description .section_img {
@@ -214,13 +214,14 @@ body {
     padding: 1rem;
   }
   .containerAbout .section_container .section_description .section_title h1 {
-    font-size: 1.9rem;
-  }
-  .containerAbout .section_container .section_description .section_title h2 {
     font-size: 1.7rem;
   }
+  .containerAbout .section_container .section_description .section_title h2 {
+    font-size: 1.5rem;
+  }
   .containerAbout .section_container .section_description .section_text p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    font-weight: 300;
   }
   .section_container .section_description .section_img {
     width: 50%;
@@ -306,16 +307,22 @@ body {
   }
 
   .containerAbout .section_container .section_description .section_title {
-    height: 11rem;
+    height: 10rem;
     width: 95%;
     margin: auto;
   }
-  .containerAbout .section_container .section_description .section_text p {
+  .containerAbout .section_container .section_description .section_title h1 {
+    font-size: 1.9rem;
     margin: 0.5rem auto;
+    padding: 0.5rem 0;
   }
-  .containerIcons {
-    margin-top: 1rem;
+  .containerAbout .section_container .section_description .section_title h2 {
+    margin-bottom: 0;
   }
+  .containerAbout .section_container .section_description .section_text p {
+    margin: 0 auto;
+  }
+
   .slick-list {
     width: 100%;
     margin-left: 15%;
@@ -350,10 +357,14 @@ body {
     width: 65%;
     height: 65%;
   }
+
   .containerAbout .section_container .section_description .section_text p {
     margin-top: 1.5rem;
   }
   .containerIcons {
+    margin-top: 2rem;
+  }
+  .section_container {
     margin-top: 2rem;
   }
 }
